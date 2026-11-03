@@ -1,6 +1,6 @@
 package com.campusflow.model;
 
-public class User {
+public abstract class User {
     private final String userId;
     private String name;
     private String email;
@@ -10,6 +10,7 @@ public class User {
 
     //constructors for registration
     //1.
+
     public User(String userId,String name){
 
         this(userId, name, null, null, null);
@@ -40,6 +41,15 @@ public class User {
         this.password = password;
         this.role = role;
     }
+
+    public abstract void showDashboard();
+
+    public void displayProfile() {
+        System.out.println("User ID: " + this.userId);
+        System.out.println("Name: " + this.name);
+        System.out.println("Email: " + this.email);
+    }
+
     public String getName(){
         return this.name;
     }
@@ -69,7 +79,7 @@ public class User {
             this.email = email;
         }
     }
-
+    
 
 }
 
